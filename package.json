@@ -1,7 +1,7 @@
 {
     "name": "yaroslavkopylov",
     "version": "2.0.0",
-    "description": "",
+    "description": "**Read in other languages: [Русский](README.md), [Polski](README.pl.md).**",
     "homepage": "https://github.com/YaroslavKopylov/js-hw9",
     "scripts": {
         "start": "parcel src/*.html",
@@ -18,7 +18,8 @@
         "url": "https://github.com/goitacademy/parcel-project-template/issues"
     },
     "dependencies": {
-        "modern-normalize": "^1.1.0"
+        "modern-normalize": "^1.1.0",
+        "notiflix": "^3.2.5"
     },
     "devDependencies": {
         "@parcel/transformer-sass": "^2.6.0",
