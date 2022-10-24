@@ -506,9 +506,8 @@ function hmrAcceptRun(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _notiflix = require("notiflix");
 var _notiflixDefault = parcelHelpers.interopDefault(_notiflix);
-const firstDelay = document.querySelector('input[name="delay"]'), delayStep = document.querySelector('input[name="step"]'), amount = document.querySelector('input[name="amount"]'), btnStart = document.querySelector("button[type='submit']");
-// notiflixAlert = document.getElementById("NotiflixNotifyWrap-1");
-// console.log(notiflixAlert);
+const firstDelay = document.querySelector('input[name="delay"]'), delayStep = document.querySelector('input[name="step"]'), amount = document.querySelector('input[name="amount"]'), form = document.querySelector("form");
+btnStart = document.querySelector("button[type='submit']");
 function createPromise(position, delay) {
     return new Promise((resolve, reject)=>{
         const shouldResolve = Math.random() > 0.3;
@@ -531,14 +530,8 @@ btnStart.addEventListener("click", (e)=>{
         (0, _notiflixDefault.default).Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
     }).catch(({ position , delay  })=>{
         (0, _notiflixDefault.default).Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
-    });
-}); // notiflixAlert.addEventListener("mousemove", onRemove);
- // function onRemove() {
- //     removeVisible();
- // }
- // function removeVisible() {
- //     notiflixAlert.classList.add("nx-remove");
- // }
+    }).finally(()=>form.reset());
+});
 
 },{"notiflix":"5WWYd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5WWYd":[function(require,module,exports) {
 var global = arguments[3];

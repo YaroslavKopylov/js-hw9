@@ -2,9 +2,9 @@ import Notiflix from "notiflix";
 const firstDelay = document.querySelector('input[name="delay"]'),
     delayStep = document.querySelector('input[name="step"]'),
     amount = document.querySelector('input[name="amount"]'),
-    btnStart = document.querySelector("button[type='submit']");
-// notiflixAlert = document.getElementById("NotiflixNotifyWrap-1");
-// console.log(notiflixAlert);
+    form = document.querySelector("form");
+
+btnStart = document.querySelector("button[type='submit']");
 
 function createPromise(position, delay) {
     return new Promise((resolve, reject) => {
@@ -37,15 +37,6 @@ btnStart.addEventListener("click", (e) => {
                 Notiflix.Notify.failure(
                     `❌ Rejected promise ${position} in ${delay}ms`
                 );
-            });
+            })
+            .finally(() => form.reset());
 });
-
-// notiflixAlert.addEventListener("mousemove", onRemove);
-
-// function onRemove() {
-//     removeVisible();
-// }
-
-// function removeVisible() {
-//     notiflixAlert.classList.add("nx-remove");
-// }
